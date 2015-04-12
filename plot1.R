@@ -16,7 +16,15 @@ generatePlot <- function(){
   #
   # args:
   #  file: Is the csv file to load (presumes ; separated)
+  
+  #load the data
   dataset <- loadData()
+  
+  # Create the plot
   hist( dataset$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)",
         main ="Global Active Power")
+  
+  # Generate the file
+  dev.copy(png,'plot1.png')
+  dev.off()
 }
